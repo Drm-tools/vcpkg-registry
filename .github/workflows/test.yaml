@@ -14,6 +14,7 @@ jobs:
     runs-on: windows-latest
     env:
       USERNAME: ${{ github.actor }}
+      CMAKE_MODULE_PATH: C:/vcpkg/ports/vcpkg-cmake
     steps:
 
     - name: Checkout code
@@ -22,6 +23,5 @@ jobs:
     - name: Build
       shell: bash
       run: |
-        find C:/ -name vcpkg_cmake_configure.cmake
         vcpkg install hamlib --overlay-ports=./ports/hamlib
 
