@@ -1,0 +1,6 @@
+{
+  "name": "hamlib",
+  "version-string": "4.6.5",
+  "description": "Ham radio control library for rigs (radios), rotators, and amplifiers.",
+  "homepage": "https://hamlib.sourceforge.net/"
+}
