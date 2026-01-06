@@ -20,6 +20,8 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build
+      shell: bash
       run: |
+        find / -name 
         vcpkg install hamlib --overlay-ports=./ports/hamlib
 
