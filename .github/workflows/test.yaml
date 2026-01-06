@@ -1,0 +1,25 @@
+name: test
+
+permissions:
+  packages: write
+
+on:
+  push:
+    branches: [ '*' ]
+  release:
+    branches: [ main ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    env:
+      USERNAME: ${{ github.actor }}
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build
+      run: |
+        vcpkg install hamlib --overlay-ports=./ports/hamlib
+
