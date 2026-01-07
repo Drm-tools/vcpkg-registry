@@ -14,23 +14,14 @@ jobs:
     runs-on: windows-latest
     env:
       USERNAME: ${{ github.actor }}
-      CMAKE_MODULE_PATH: C:/vcpkg/ports/vcpkg-cmake
-      CMAKE_TOOLCHAIN_FILE: C:/vcpkg/scripts/buildsystems/vcpkg.cmake
-      VCPKG_ROOT: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/vcpkg
-
     steps:
 
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: setup
-      run: |
-        "${{ env.VCPKG_ROOT }}/bootstrap-vcpkg.bat"
-
-    - name: check
+    - name: Bootstrap vcpkg
+      run: "${{ github.workspace }}/vcpkg/bootstrap-vcpkg.sh"
       shell: bash
-      run: |
-        find C:/ -name vcpkg_cmake_configure.cmake -a -print
         
     - name: Build
       run: |
