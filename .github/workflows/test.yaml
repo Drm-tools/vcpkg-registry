@@ -1,4 +1,4 @@
-bash: Test vcpkg ports
+name: Test vcpkg ports
 
 on:
   push:
