@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      VCPKG_ROOT: C:/Program Files/Microsoft Visual Studio/2022/Enterprise/VC/vcpkg
 
     steps:
     - uses: actions/checkout@v4
@@ -31,7 +33,7 @@ jobs:
           core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
 
     - name: Build ports
-      run: ${{ github.workspace }}/vcpkg/vcpkg install
+      run: ${{ env.VCPKG_ROOT }}/vcpkg install
       env:
         X_VCPKG_ASSET_SOURCES: "clear;x-azurl,https://your.domain.com/container,${{ secrets.SAS }},readwrite"
         VCPKG_BINARY_SOURCES: "clear;x-gha,readwrite"
