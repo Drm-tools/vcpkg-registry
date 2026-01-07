@@ -30,7 +30,7 @@ jobs:
     - name: check
       shell: bash
       run: |
-        find C:/ -name vcpkg-cmake-configure -a -print
+        find C:/ -name vcpkg_cmake_configure.cmake -a -print
         
     - name: Build
       run: |
