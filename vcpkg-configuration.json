@@ -6,13 +6,6 @@
     "baseline": "eefee7408133f3a0fef711ef9c6a3677b7e06fd7"
   },
   "registries": [
-    {
-      "kind": "git",
-      "repository": "https://github.com/MicrosoftDocs/vcpkg-docs",
-      "reference": "vcpkg-registry",
-      "baseline": "768f6a3ad9f9b6c4c2ff390137690cf26e3c3453",
-      "packages": [ "beicode", "beison" ]
-    }
   ],
   "overlay-ports": [
     "./ports/hamlib"
