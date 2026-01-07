@@ -23,7 +23,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Build
+    - name: setup
       run: |
         "${{ env.VCPKG_ROOT }}/bootstrap-vcpkg.bat"
+
+    - name: check
+      shell: bash
+      run: |
+        find C:/ -name vcpkg-cmake-configure -a -print
+        
+    - name: Build
+      run: |
         vcpkg install vcpkg-cmake hamlib --overlay-ports=./ports/hamlib
