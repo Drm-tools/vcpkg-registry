@@ -25,5 +25,5 @@ jobs:
     - name: Build
       shell: bash
       run: |
-        vcpkg install hamlib --overlay-ports=./ports/hamlib
+        vcpkg install vcpkg-cmake hamlib --overlay-ports=./ports/hamlib
 
