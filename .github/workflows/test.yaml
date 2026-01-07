@@ -25,5 +25,5 @@ jobs:
 
     - name: Build
       run: |
-        ${{ env.VCPKG_ROOT }}/bootstrap-vcpkg.bat
+        "${{ env.VCPKG_ROOT }}"/bootstrap-vcpkg.bat
         vcpkg install vcpkg-cmake hamlib --overlay-ports=./ports/hamlib
