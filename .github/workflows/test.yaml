@@ -25,5 +25,5 @@ jobs:
     - name: Build
       shell: bash
       run: |
-        vcpkg install hamlib
+        vcpkg install
 
